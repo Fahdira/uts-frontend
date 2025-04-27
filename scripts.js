@@ -1,0 +1,22 @@
+const API_BASE_URL = "http://backend-private-ip:3000"; // ⬅️ Replace with your backend PRIVATE IP
+
+async function loadProducts() {
+  const res = await fetch(`${API_BASE_URL}/products`);
+  const products = await res.json();
+
+  const container = document.getElementById('products');
+  container.innerHTML = '';
+
+  products.forEach(product => {
+    const div = document.createElement('div');
+    div.classList.add('product-card');
+    div.innerHTML = `
+      <img src="${product.imageUrl}" alt="${product.name}" class="product-image">
+      <h2>${product.name}</h2>
+      <p>Rp ${product.price}</p>
+    `;
+    container.appendChild(div);
+  });
+}
+
+loadProducts();
