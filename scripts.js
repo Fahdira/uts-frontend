@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://10.0.3.137:3000"; // ⬅️ Replace with your backend PRIVATE IP
+const API_BASE_URL = "http://10.0.3.137:3000";
 
 async function loadProducts() {
   const res = await fetch(`${API_BASE_URL}/products`);
