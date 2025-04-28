@@ -1,8 +1,8 @@
-const API_BASE_URL = "";
+const API_BASE_URL = "http://3.0.103.39";
 
 async function loadProducts() {
   try {
-    const res = await fetch(`${API_BASE_URL}/products`);
+    const res = await fetch('${API_BASE_URL}/products');
     const products = await res.json();
 
     const container = document.getElementById('products');
